@@ -1,0 +1,607 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Stage Bans</title>
+</head>
+<body>
+<!-- css section -->
+<style>
+    html {
+        font-family: 'Helvetica neue';
+        background-color: #2F3135;
+    }
+    .main-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .main {
+        height: 90%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        background-color: #36393F;
+        /* border: 3px solid #FF0122; */
+    }
+
+    .title-bar {
+        width: 100%;
+        height: 200px;
+        background-color: #484C50;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .stages-container {
+        background-color: #FF0122;
+        /* border: 3px solid #FF0122; */
+        width: 90%;
+        margin: 0px auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+
+    }
+
+    .stages-starters {
+        background-color: #2F3135;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 780px;
+        height: auto;
+    }
+
+    
+
+    .stage {
+        min-height: 175px;
+        min-width: 330px;
+        background-color:rgba(0, 0, 0, 0.1);
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* margin: 32px auto; */
+        margin: 30px;
+        color: white;
+        font-size: 50px;
+        text-align: center;
+        flex: 1;
+        border-radius: 25px;
+        /* box-shadow: 5px 5px 5px red; */
+        /* border: 5px solid red; */
+        background-size: cover;
+        background-position: center;
+    }
+
+    .stage > button{
+        color: white;
+        font-size: 50px;
+    }
+
+    .stage > p {
+        color: white;
+        font-size: 50px;
+    }
+
+    .stages-cp {
+        background-color: #484C50;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 780px;
+        height: auto;
+    }
+
+    .banned-red {
+        background-color: rgba(255, 0, 0, 0.493) !important;
+    }
+
+    .banned-blue {
+        background-color: rgba(25, 0, 255, 0.493) !important;
+    }
+
+    .title-bar > p {
+        font-size: 100px;
+        margin: 0px;
+    }
+
+    .actions-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .actions-container > button {
+        border: 1px solid black;
+        background-color: red;
+    }
+
+    .actions-container > * {
+        margin: 20px auto;
+        font-size: 50px;
+    }
+
+    .directions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 50px;
+        /* height: 100%; */
+    }
+
+    .directions > * {
+        /* margin: 20px auto; */
+        font-size: 50px;
+        flex: 1;
+        height: 100%;
+        max-height: 120px;
+
+    }
+
+    .directions > button {
+        border: 1px solid black;
+        background-color: gray;
+    }
+
+    .directions > button:first-child {
+        background-color: #484C50;
+    }
+
+    .content-container {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    button:disabled {
+        background-color: gray;
+        color: white;
+    }
+
+    button:disabled.p1Ban {
+        border: 5px solid blue;
+    }
+    button:disabled.p2Ban {
+        border: 5px solid red;
+    }
+
+    .phase {
+        margin: auto;
+        font-size: 50px;
+    }
+
+    .direction-content {
+        color:white;
+    }
+
+    .stage-starters > button:nth-child(1) {
+        color: red;
+        background-color: red;
+    }
+
+    .stage:nth-child(even) {
+        margin-left: 15px; 
+    }
+
+    .stage:nth-child(n+3) {
+        margin-top: 0;
+    }
+
+    .stage:nth-child(odd) {
+        margin-right: 15px;
+    }
+
+    .stages-starters > .stage:last-child {
+        margin-right: 30px;
+    }
+
+    .bf {
+        background-image: url(https://i.imgur.com/2PXG41w.jpg);
+    }
+
+    .ps2 {
+        background-image: url(https://i.imgur.com/IpE8nxC.jpg);
+    }
+
+    .sv {
+        background-image: url(https://i.imgur.com/e54hOPS.jpg);
+    }
+
+    .lylat {
+        background-image: url(https://i.imgur.com/k6VNaGL.jpg);
+    }
+
+    .cs {
+        background-image: url(https://i.imgur.com/DVSKb6g.jpg);
+    }
+
+    .uv {
+        background-image: url(https://i.imgur.com/TxW0diw.jpg);
+        
+    }
+    .kalos {
+        background-image: url(https://i.imgur.com/hd01Sgu.jpg);
+        
+    }
+    .tnc {
+        background-image: url(https://i.imgur.com/22n64o4.jpg);
+        
+    }
+    .fd {
+        background-image: url(https://i.imgur.com/ZxdGDLH.jpg);
+        
+    }
+    .ys {
+        background-image: url(https://i.imgur.com/pq2WqLd.jpg);
+        
+    }
+    .yb {
+        background-image: url(https://i.imgur.com/xNNexqk.jpg);
+    }
+
+
+    
+    button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button > p {
+        margin: 0;
+
+    }
+
+    button > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    button > * > p {
+        color: black;
+        font-weight: bolder;
+        font-size: 2.2rem;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color:  rgba(255, 255, 255, 0.7);
+    }
+
+    .layer {
+        /* background-color: rgba(255, 255, 255, 0.5); */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* border-radius: 25px; */
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    html {
+        font-size: 65%;
+    }
+
+    .container {
+        background-color: black; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;
+    }
+
+    .main {
+        background-color: black; height: 90%; width: 90%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+        border: 3px solid red;
+    }
+
+    .sections {
+        background-color: black; display: flex; flex-direction: column; flex-wrap: wrap; justify-content: center; align-items: center; height: 100%; width: 100%;
+    }
+
+    .game-section {
+        background-color: black; display: flex; width: 100%;justify-content: center; align-items: stretch; flex: 1;
+    }
+
+    .stage-section {
+        background-color: black; display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; flex: 5;
+    }
+
+    .stage-button {
+        background-color:blue; min-width: 30vw; min-height: 8vh; margin: 10px; border: solid 3px white; flex:1;  background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+    }
+
+    .game-button {
+        background-color: red;
+        color: white;
+        flex: 1;
+        border: none;
+    }
+
+    .banned-red {
+        border: 3px solid red;
+    }
+
+    .banned-blue {
+        border: 3px solid gray;
+    }
+
+    .banned-red > * {
+        background-color: rgba(255, 0, 0, 0.5);
+        transition: all ease .2s;
+    }
+
+    .banned-blue > * {
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: all ease .2s;
+        
+    }
+
+    .game1-button {
+        border-right: 1px solid black !important;
+    }
+
+    .selected-button {
+        background-color: black;
+    }
+
+    .selected-button > p {
+        text-decoration: underline;
+    }
+
+
+
+
+
+</style>
+<!-- html body section -->
+<!-- main container -->
+<!--<div class="main-container">
+    <div class="main">
+        <div class="content-container">
+            <div class="directions">
+                <button>
+                    <p>Game 1</p>
+                </button>
+                <button>
+                    <p>Game 2+</p>
+                </button>
+            </div>
+            <div class="stages-container">
+                <div class="stages-starters">
+                    <button class="stage bf">
+                        <div class="layer banned-red">
+                            <p>BF</p>
+                        </div>
+                    </button>
+                    <button class="stage sv">
+                        <div class="layer banned-blue">
+                            <p>Smashville</p>
+                        </div>
+                    </button>
+                    <button class="stage fd">
+                        <div class="layer">
+                            <p>FD</p>
+                        </div>
+                    </button>
+                    <button class="stage lylat">
+                        <div class="layer">
+                            <p>Lylat</p>
+                        </div>
+                    </button>
+                    <button class="stage ps2">
+                        <div class="layer">
+                            <p>PS2</p>
+                        </div>
+                    </button>
+                </div>
+                <div class="stages-cp">
+                    <button class="stage uv">
+                        <div class="layer">
+                            <p>Unova</p>
+                        </div>
+                    </button>
+                    <button class="stage cs">
+                        <div class="layer">
+                            <p>Castle</p>
+                        </div>
+                    </button>
+                    <button class="stage tnc">
+                        <div class="layer">
+                            <p>T & C</p>
+                        </div>
+                    </button>
+                    <button class="stage ys">
+                        <div class="layer">
+                            <p>Story</p>
+                        </div>
+                    </button>
+                    <button class="stage kalos">
+                        <div class="layer">
+                            <p>Island</p>
+                        </div>
+                    </button>
+                    <button class="stage yb">
+                        <div class="layer">
+                            <p>Kalos</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+<!-- body -->
+<div class="container">
+    <!-- main container -->
+    <div class="main">
+        <!-- sections container -->
+        <div class="sections">
+            <div class="game-section">
+                <button class="game-button game1-button selected-button">
+                    <p style="font-size: 2rem; font-weight:bold">Game 1</p>
+                </button>
+                <!-- <div style="flex: 1;"> -->
+                <button class="game-button game2-button">
+                    <p style="font-size: 2rem; font-weight: bold">Game 2+</p>
+                </button>
+                <!-- </div> -->
+            </div>
+
+            <!-- stage section -->
+            <div class="stage-section">
+                <button class="stage-button bf">
+                    <div class="layer">
+                        <p>Battlefield</p>
+                    </div>
+                </button>
+                <button class="stage-button sv">
+                    <div class="layer">
+                        <p>Smashville</p>
+                    </div>
+                </button>
+                <button class="stage-button lylat">
+                    <div class="layer">
+                        <p>Lylat</p>
+                    </div>
+                </button>
+                <button class="stage-button fd">
+                    <div class="layer">
+                        <p>Final D.</p>
+                    </div>
+                </button>
+                <button class="stage-button ps2">
+                    <div class="layer">
+                        <p>Pokemon Stadium 2</p>
+                    </div>
+                </button>
+            </div>
+            <div class="stage-section cp" style="display: none">
+                <button class="stage-button uv">
+                    <div class="layer">
+                        <p>Unova</p>
+                    </div>
+                </button>
+                <button class="stage-button cs">
+                    <div class="layer">
+                        <p>Castle</p>
+                    </div>
+                </button>
+                <button class="stage-button tnc">
+                     <div class="layer">
+                        <p>Town</p>
+                    </div>
+                </button>
+                <button class="stage-button ys">
+                    <div class="layer">
+                        <p>Story</p>
+                    </div>
+                </button>
+                <button class="stage-button kalos">
+                     <div class="layer">
+                        <p>Kalos</p>
+                    </div>
+                </button>
+                <button class="stage-button yb">
+                    <div class="layer">
+                        <p>Island</p>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- js section -->
+<script>
+    const g1Button = document.querySelector('.game1-button');
+    const cp = document.querySelector('.cp');
+    let displayCp = false;
+    let bans = 1;
+    g1Button.addEventListener('click', displayUI);
+    const g2Button = document.querySelector('.game2-button');
+    g2Button.addEventListener('click', displayUI);
+    const stages = document.querySelectorAll('.stage-button');
+    stages.forEach(stage => stage.addEventListener('click', () => banStage(stage, bans, displayCp)));
+
+    function displayUI() {
+        if (this.classList.contains('game1-button')) {
+            cp.style.display = 'none';
+            g1Button.classList.add('selected-button');
+            g2Button.classList.remove('selected-button');
+            clearVars(false);
+        } else {
+            cp.style.display = 'flex';
+            g2Button.classList.add('selected-button');
+            g1Button.classList.remove('selected-button');
+            clearVars(true);
+
+        }
+    }
+
+    function clearVars(displayAll) {
+        displayAll === true ? displayCp = true : displayCp = false;
+        clearBanClasses();
+        bans = 1;
+    }
+
+    function clearBanClasses() {
+        stages.forEach(stage => stage.classList.remove('banned', 'banned-red', 'banned-blue'));
+    }
+
+    function banStage(el) {
+        if (el.classList.contains('banned-red')) {
+            bans--;
+            el.classList.remove('banned-red');
+        } else if (el.classList.contains('banned-blue')) {
+            bans--;
+            el.classList.remove('banned-blue');
+        } else if (!displayCp && bans < 5) {
+            // ban stage & rotate ban color
+            // (bans % 2 === 0) ? //red : //blue
+            if (bans === 1 || bans === 4) {
+                el.classList.add('banned-red')
+            } else {
+                el.classList.add('banned-blue');
+            }
+            // updateBans(bans);
+            bans++;
+        } else if (displayCp) {
+            el.classList.add('banned-red');
+            // ban stage red
+            bans++;
+        }
+
+
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

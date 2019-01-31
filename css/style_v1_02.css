@@ -97,7 +97,7 @@ button > * > p {
 }
 
 .game-button {
-    background-color: red;
+    background-color: black;
     color: white;
     flex: 1;
     border: none;
@@ -119,7 +119,7 @@ button > * > p {
 .banned-blue > * {
     background-color: rgba(0, 0, 255, 0.5);
     transition: all ease .2s;
-    
+
 }
 
 .game1-button {
@@ -127,7 +127,7 @@ button > * > p {
 }
 
 .selected-button {
-    background-color: black;
+    background-color: red;
 }
 
 .selected-button > p {
@@ -156,23 +156,23 @@ button > * > p {
 
 .uv {
     background-image: url(https://i.imgur.com/TxW0diw.jpg);
-    
+
 }
 .kalos {
     background-image: url(https://i.imgur.com/hd01Sgu.jpg);
-    
+
 }
 .tnc {
     background-image: url(https://i.imgur.com/22n64o4.jpg);
-    
+
 }
 .fd {
     background-image: url(https://i.imgur.com/ZxdGDLH.jpg);
-    
+
 }
 .ys {
     background-image: url(https://i.imgur.com/pq2WqLd.jpg);
-    
+
 }
 .yb {
     background-image: url(https://i.imgur.com/xNNexqk.jpg);
